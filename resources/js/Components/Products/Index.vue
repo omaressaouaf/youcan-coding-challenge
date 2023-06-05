@@ -46,6 +46,7 @@
             <ProductsList :products="products" />
         </div>
         <div class="col-md-4">
+            <ProductsCreate @product-created="handleProductCreated" />
         </div>
     </div>
 </template>
@@ -54,6 +55,7 @@
 import axios from "axios";
 import { ref, onMounted, watch } from "vue";
 import ProductsList from "@/Components/Products/List.vue";
+import ProductsCreate from "@/Components/Products/Create.vue";
 
 const categoryId = ref(null);
 const sortBy = ref("price");
@@ -89,6 +91,11 @@ const fetchCategories = async () => {
 watch([categoryId, sortBy, sortOrder], () => {
     fetchProducts();
 });
+
+const handleProductCreated = () => {
+    categoryId.value = null;
+    fetchProducts();
+};
 
 onMounted(() => {
     fetchCategories();
