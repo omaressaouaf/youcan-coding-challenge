@@ -19,7 +19,7 @@ The coding challenge implements the 2 required features:
 - Run `php artisan key:generate`
 - Run `php artisan migrate --seed` (it has sample testing data)
 - Run `php artisan storage:link`
-- Run `npm install`
+- Run `npm install && npm run dev`
 - Launch the main URL to use the web version
 - Launch `php artisan products:create` to use the cli version
 
