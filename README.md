@@ -1,4 +1,4 @@
-## Coding Challenge Software Engineer application by Omar Essaouaf
+## YouCan Coding Challenge Software Engineer application by Omar Essaouaf
 
 The coding challenge implements the 2 required features:
 1. Ability to create a product (from web and cli)
