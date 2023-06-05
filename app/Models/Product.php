@@ -25,7 +25,7 @@ class Product extends Model
 
     protected function imageUrl(): Attribute
     {
-        return Attribute::get(fn ($value, $attributes) => asset('storage/' . $attributes['image_path']));
+        return Attribute::get(fn ($value, $attributes) => asset('storage/'.$attributes['image_path']));
     }
 
     public function scopeFilterBy(Builder $query, string $filter, string|int|null $value): Builder
@@ -70,7 +70,7 @@ class Product extends Model
 
         throw_unless(in_array($image->guessExtension(), $imagesExtension), new InvalidArgumentException('File must be an image'));
 
-        $basename = $this->id . '-' . time();
+        $basename = $this->id.'-'.time();
 
         $imagePath = $image->storeAs('products', "{$basename}.{$image->guessExtension()}");
 

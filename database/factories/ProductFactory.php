@@ -30,7 +30,7 @@ class ProductFactory extends Factory
     public function configure(): static
     {
         return $this->afterCreating(function (Product $product) {
-            $product->attachImage('https://placehold.co/' . $this->faker->numberBetween(400, 800) . '/jpg');
+            $product->attachImage('https://placehold.co/'.$this->faker->numberBetween(400, 800).'/jpg');
         });
     }
 }

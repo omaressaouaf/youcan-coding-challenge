@@ -12,7 +12,7 @@ class ProductRepository implements ProductRepositoryInterface
     public function getProducts(string|int|null $categoryId = null, ?string $sortBy = null, ?string $sortOrder = null): Collection
     {
         return Product::query()
-            ->with("categories")
+            ->with('categories')
             ->when($categoryId, fn (Builder $query) => $query->filterBy('category', $categoryId))
             ->when($sortBy, fn (Builder $query) => $query->sortBy($sortBy, $sortOrder))
             ->get();

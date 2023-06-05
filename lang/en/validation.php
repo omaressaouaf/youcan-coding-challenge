@@ -181,7 +181,7 @@ return [
 
     'attributes' => [
         'selected_categories_ids' => 'categories',
-        'selected_categories.ids.*' => 'category'
+        'selected_categories.ids.*' => 'category',
     ],
 
 ];
